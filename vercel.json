@@ -1,0 +1,68 @@
+{
+  "version": 2,
+  "name": "youtube-uploader",
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "public/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/accounts",
+      "dest": "index.js"
+    },
+    {
+      "src": "/addAccount",
+      "dest": "index.js"
+    },
+    {
+      "src": "/auth",
+      "dest": "index.js"
+    },
+    {
+      "src": "/oauth2callback",
+      "dest": "index.js"
+    },
+    {
+      "src": "/upload",
+      "dest": "index.js"
+    },
+    {
+      "src": "/deleteAccount/(.*)",
+      "dest": "index.js"
+    },
+    {
+      "src": "/dashboard",
+      "dest": "index.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "public/$1"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "functions": {
+    "index.js": {
+      "memory": 1024,
+      "maxDuration": 60
+    }
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=0"
+        }
+      ]
+    }
+  ]
+} 
