@@ -25,7 +25,7 @@ This Node.js application provides an API and dashboard for uploading videos to Y
 Clone this repository and install the required packages:
 
 ```bash
-git clone <repository_url>
+git clone https://github.com/omkantm4ani/yt-uploader
 cd yt-uploader
 npm install
 ```
