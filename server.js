@@ -70,7 +70,8 @@ const PORT = process.env.PORT || 3000;
 const allowedOrigins = [
   'https://alphacbse.site',
   'https://alphacbse.fun',
-  'https://max-study.netlify.app'
+  'https://max-study.netlify.app',
+  'http://localhost:5173',
 ];
 
 // Hardcoded base URL
