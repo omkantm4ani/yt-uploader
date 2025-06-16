@@ -60,9 +60,18 @@
 const express = require('express');
 const axios = require('axios');
 const cookie = require('cookie');
+const cors = require('cors'); // Import CORS
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Configure CORS to allow only requests from 'https://alphacbse.site'
+const allowedOrigins = [
+  'https://alphacbse.site',
+  'https://alphacbse.fun',
+  'https://max-study.netlify.app'
+];
 
 // Hardcoded base URL
 const BASE_URL = 'https://rarestudy7-52f3cb8bbd16.herokuapp.com/media/';
