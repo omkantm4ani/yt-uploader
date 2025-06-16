@@ -73,7 +73,17 @@ const allowedOrigins = [
   'https://max-study.netlify.app',
   'http://localhost:5173',
 ];
-
+// ✅ Enable CORS with origin check
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+}));
 // Hardcoded base URL
 const BASE_URL = 'https://rarestudy7-52f3cb8bbd16.herokuapp.com/media/';
 
