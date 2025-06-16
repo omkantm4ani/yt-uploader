@@ -85,7 +85,7 @@ app.use(cors({
   credentials: true,
 }));
 // Hardcoded base URL
-const BASE_URL = 'https://rarestudy7-52f3cb8bbd16.herokuapp.com/media/';
+const BASE_URL = 'https://rarestudy.site/media/';
 
 app.get('/extract-video', async (req, res) => {
   const id = req.query.id;
@@ -100,7 +100,7 @@ app.get('/extract-video', async (req, res) => {
     const response = await axios.get(fullUrl, {
       headers: {
         'User-Agent': 'Mozilla/5.0',
-        'Referer': 'https://rarestudy7-52f3cb8bbd16.herokuapp.com/',
+        'Referer': 'https://rarestudy.site/',
         'Accept': 'text/html,application/xhtml+xml',
         'Cookie': cookie.serialize('next-login', 'success') + '; ' +
                   cookie.serialize('session', '.eJxlkU9vmzAcQL8L57XiT8ia3kgIjr3YCOJA8GXCwIqNoTQJaWDad59JpV12siy_n_X8_Nv42VfnNu-q7mq8Xs9D9c24vjdVZ7wa1YjM6uSJUKAfiRWJ_QbVHBTzHh4naBGBVs8aUtVOQ3LrEOrZ2McL4uOBSDjqgSY7xTWU_XeoVj3bwCWUmUnspM1odGcpqbG_dbDv3UO_uWeyFNkBXmCXTOyEhiy1FJTvIqTYwvJtgal3J6M-b1lfdMSkbXBlB31nE4wFUCYUn4KDYCq3bs3T4yxK89Tt8s08sxqZHQz5qa9LoG5cwKV2_5WnkeagxVI4hZQoRhuLtYEgU2SHYOuEaTS7zY93WIqm_BQ_nApQu4WtZOGUOsq9zjeu5LY5c_-8j_8xaKXPFU-Dns8t2i9vzQzMrmsimykC5TVL1WXfkht_tEA3DpJJN-RQJgLrRsxvbELfTNxmLqHrmkzFIpuYYkLzMpHZ1FgZRSoEqGE0bohkeo0-MYATGVGpHSR3kqHcITd20K38-mRE5_kudgvwaJcczeQAO1O3U3WpfTEtzJA2bkg9Ezvmc_Ti73fek2WOjUxrZUfc_lg7MerFulhGznh-6WHUPgHwcTH-_AWeX9DP.aE75IA.UfoVrY3gzJsNbhBYfJcFNLsARuA')
